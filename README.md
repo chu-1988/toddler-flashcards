@@ -4,8 +4,9 @@ Phone-friendly flashcards for toddlers. Tap a big emoji card to hear the word sp
 
 ## Features
 
-- 12 starter words (animals, food, objects) with cute emoji — works offline for pictures
+- **120 words across 10 pages** (12 cards per page) — animals, food, body, home, clothes, vehicles, nature, colors & play — with cute emoji
 - Large tap targets, mobile Safari/Chrome friendly
+- Bottom pagination: **Previous / Next** plus a **page indicator** (`1 / 10`) and tap-friendly dots; Prev disabled on page 1, Next on the last page
 - `POST /api/speak` → ElevenLabs → `audio/mpeg`, cached by `word + voiceId`
 - Clear loading / error messages; graceful message if the API key is missing
 - Optional parent Settings panel: override Voice ID in `localStorage` (great for a cloned parent voice)
@@ -59,14 +60,29 @@ After changing `.env`, restart the server (`Ctrl+C`, then `npm start`).
 - One word at a time (the flashcard label)
 - Slightly slow & stable: `speed: 0.85`, `stability: 0.75`, `similarity_boost: 0.8`, `style: 0`, `use_speaker_boost: true`
 
+## Vocabulary (120 words / 10 pages)
+
+| Page | Theme | Sample words |
+|------|--------|--------------|
+| 1 | Pets & farm | dog, cat, bird, fish, cow, bunny |
+| 2 | Wild animals | bear, lion, elephant, penguin, turtle |
+| 3 | Food | apple, banana, milk, pizza, carrot |
+| 4 | More food | orange, soup, yogurt, berry, lemon |
+| 5 | Body | eyes, nose, hand, tummy, teeth, toe |
+| 6 | Home | bed, door, chair, lamp, spoon, clock |
+| 7 | Clothes | shirt, sock, shoe, hat, coat, boot |
+| 8 | Vehicles | car, bus, train, plane, rocket, bike |
+| 9 | Nature | sun, moon, rain, tree, flower, water |
+| 10 | Colors & play | red, blue, green, yellow, ball, book, toy |
+
+All words are simple lowercase `a–z` toddler vocabulary (no spaces or hyphens). The server only speaks words on this allow-list.
+
 ## API
 
 | Method | Path | Body | Response |
 |--------|------|------|----------|
 | `GET` | `/api/health` | — | `{ ok, ttsConfigured, hasApiKey, hasDefaultVoice }` |
 | `POST` | `/api/speak` | `{ "word": "dog", "voiceId?": "..." }` | `audio/mpeg` or JSON error |
-
-Allowed words: `dog`, `cat`, `bird`, `fish`, `apple`, `banana`, `milk`, `ball`, `car`, `book`, `sun`, `flower`.
 
 Cached files live in `./cache/` as `{word}__{voiceId}.mp3`.
 

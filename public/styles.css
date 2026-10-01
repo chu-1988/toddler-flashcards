@@ -218,3 +218,90 @@ code {
   padding: 1px 6px;
   border-radius: 6px;
 }
+
+/* Pagination — big toddler-friendly tap targets */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 4px 0 calc(8px + var(--safe-b));
+}
+
+.pager-btn {
+  appearance: none;
+  border: none;
+  border-radius: 18px;
+  min-width: 104px;
+  min-height: 56px;
+  padding: 14px 18px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.pager-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.pager-btn:disabled,
+.pager-btn[aria-disabled="true"] {
+  opacity: 0.38;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pager-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.page-indicator {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.page-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 220px;
+}
+
+.dot {
+  appearance: none;
+  border: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  padding: 0;
+  background: #d9cbb4;
+  cursor: pointer;
+  /* expand hit area for tiny fingers without changing visible size */
+  box-shadow: 0 0 0 10px transparent;
+  transition: background 0.12s ease, transform 0.12s ease;
+}
+
+.dot.active {
+  background: var(--accent);
+  transform: scale(1.25);
+}
+
+.dot:active {
+  transform: scale(1.1);
+}

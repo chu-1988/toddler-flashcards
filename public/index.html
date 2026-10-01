@@ -19,6 +19,15 @@
     <p class="status" id="status" hidden></p>
 
     <main class="grid" id="grid" role="list"></main>
+
+    <nav class="pager" aria-label="Flashcard pages">
+      <button type="button" class="pager-btn" id="prevBtn" aria-label="Previous page">◀ Prev</button>
+      <div class="pager-center">
+        <p class="page-indicator" id="pageIndicator" aria-live="polite">1 / 10</p>
+        <div class="page-dots" id="pageDots" role="navigation" aria-label="Jump to page"></div>
+      </div>
+      <button type="button" class="pager-btn" id="nextBtn" aria-label="Next page">Next ▶</button>
+    </nav>
   </div>
 
   <dialog class="sheet" id="settingsDialog">

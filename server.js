@@ -21,8 +21,36 @@ const VOICE_SETTINGS = {
 };
 
 const ALLOWED_WORDS = new Set([
-  'dog', 'cat', 'bird', 'fish', 'apple', 'banana',
-  'milk', 'ball', 'car', 'book', 'sun', 'flower',
+  // pets & farm
+  'dog', 'cat', 'bird', 'fish', 'cow', 'pig',
+  'duck', 'horse', 'frog', 'bee', 'mouse', 'bunny',
+  // wild animals
+  'bear', 'lion', 'tiger', 'monkey', 'elephant', 'giraffe',
+  'zebra', 'penguin', 'owl', 'butterfly', 'snail', 'turtle',
+  // food
+  'apple', 'banana', 'milk', 'bread', 'cheese', 'egg',
+  'cookie', 'pizza', 'cake', 'juice', 'carrot', 'grape',
+  // more food
+  'orange', 'pear', 'peach', 'corn', 'rice', 'soup',
+  'yogurt', 'waffle', 'muffin', 'berry', 'melon', 'lemon',
+  // body
+  'eyes', 'ear', 'nose', 'mouth', 'hand', 'foot',
+  'hair', 'tummy', 'teeth', 'knee', 'arm', 'toe',
+  // home
+  'bed', 'door', 'window', 'chair', 'sofa', 'lamp',
+  'cup', 'spoon', 'plate', 'soap', 'towel', 'clock',
+  // clothes
+  'shirt', 'pants', 'sock', 'shoe', 'hat', 'coat',
+  'dress', 'scarf', 'glove', 'boot', 'diaper', 'bib',
+  // vehicles
+  'car', 'bus', 'train', 'plane', 'boat', 'bike',
+  'truck', 'taxi', 'rocket', 'tractor', 'scooter', 'ship',
+  // nature
+  'sun', 'moon', 'star', 'cloud', 'rain', 'tree',
+  'flower', 'grass', 'leaf', 'rock', 'sand', 'water',
+  // colors & play
+  'red', 'blue', 'green', 'yellow', 'purple', 'pink',
+  'black', 'white', 'brown', 'ball', 'book', 'toy',
 ]);
 
 if (!fs.existsSync(CACHE_DIR)) {
